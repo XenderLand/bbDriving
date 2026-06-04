@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-dark-bg text-bodytext antialiased overflow-x-hidden font-dm; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-dark-bg; }
+  ::-webkit-scrollbar-thumb { @apply bg-blue-600 rounded; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-orange-600 text-white font-semibold text-[15px] px-9 py-4 rounded-lg
+           transition-all duration-200 hover:bg-orange-500 hover:-translate-y-0.5
+           font-dm tracking-wide cursor-pointer border-0;
+  }
+  .btn-outline {
+    @apply bg-transparent text-white font-medium text-[15px] px-9 py-4 rounded-lg
+           border border-white transition-all duration-200
+           hover:border-blue-500 hover:text-blue-500 font-dm cursor-pointer;
+  }
+  .btn-dark {
+    @apply bg-black text-white font-semibold text-[15px] px-10 py-4 rounded-lg
+           border-0 transition-all duration-200 hover:bg-[#1a1a18] hover:-translate-y-0.5
+           font-dm shrink-0 cursor-pointer;
+  }
+  .section-label {
+    @apply text-xs tracking-[2px] uppercase text-orange-600 mb-3 font-medium;
+  }
+  .section-title {
+    @apply font-bebas text-[clamp(36px,5vw,60px)] tracking-wide text-offwhite mb-4 leading-none;
+  }
+  .section-sub {
+    @apply text-base text-muted leading-relaxed font-light max-w-xl;
+  }
+  .card-base {
+    @apply bg-dark-card border border-white/[0.06] rounded-2xl
+           transition-all duration-300;
+  }
+  .input-field {
+    @apply w-full bg-white/[0.04] border border-white/10 rounded-lg px-4 py-3
+           text-bodytext text-sm font-dm outline-none
+           transition-colors duration-200 focus:border-blue-600;
+  }
+}
+
+@layer utilities {
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+}
